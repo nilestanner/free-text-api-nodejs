@@ -44,4 +44,8 @@ app.post('/text', (req, res) => {
 
 app.get('/version', (req, res) => {
     res.send(version);
+});
+
+app.get('/', (req, res) => {
+    res.send(`Free text service is up and running`);
 })

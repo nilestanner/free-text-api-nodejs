@@ -2,6 +2,7 @@ const freeTextAPI = require('free-text-api');
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const version = require('./package.json').version;
 
 const app = express();
 app.use(bodyParser.json());
@@ -40,3 +41,7 @@ app.post('/text', (req, res) => {
         res.send(result);
     });
 });
+
+app.get('/version', (req, res) => {
+    res.send(version);
+})

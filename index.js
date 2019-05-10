@@ -10,8 +10,6 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Free texting app listening on port ${port}!`));
 
-
-
 const textService = freeTextAPI({
     carrierLookup: {
         method: process.env.LOOKUPMETHOD,
@@ -24,8 +22,7 @@ const textService = freeTextAPI({
     transport: {
         service: process.env.TRANSPORTMETHOD,
         auth: {
-            user: process.env.TRANSPORTUSER,
-            pass: process.env.TRANSPORTPASS
+            api_key: process.env.TRANSPORTAPIKEY
         }
     }
 });
